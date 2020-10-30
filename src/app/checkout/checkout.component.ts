@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import {FormGroup,FormControl,FormBuilder, Validators} from '@angular/forms';
+import {FormGroup,FormControl,FormBuilder, Validators, FormArray} from '@angular/forms';
 import { getMaxListeners } from 'process';
 
 @Component({
@@ -90,7 +90,7 @@ export class CheckoutComponent implements OnInit {
    const itemVal = this.checkoutForm.get('items').value;
     console.log(itemVal[0].itemDesc);
 
-    this.checkoutForm.get('items').reset();
+    //this.checkoutForm.get('items').reset();
 
    /* this.checkoutForm.get('emailAddr').valueChanges.subscribe(data =>{
 
@@ -141,13 +141,33 @@ this.checkoutForm.statusChanges.subscribe(formState =>{
     console.log(`Quiantity`+ this.checkoutForm.value.quantity);
     console.log(`Term`+ this.checkoutForm.value.terms);
 
-    this.resetForm();
+   // this.resetForm();
 
   }
 
   resetForm(){
 
-    this.checkoutForm.reset();
+    //this.checkoutForm.reset();
+  }
+
+
+  get items(){
+
+    return this.checkoutForm.get('items') as FormArray;
+  }
+
+  addNewItem(){
+
+    const itemLength = this.items.length;
+    const newItem = this.formBuilder.group({
+
+          itemId:[itemLength + 1],
+          itemName:[''],
+          itemDesc:[''],
+          itemDone:['',Validators.requiredTrue]
+    });
+
+    this.items.push(newItem);
   }
 
 }
