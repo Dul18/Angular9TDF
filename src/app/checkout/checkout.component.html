@@ -27,7 +27,7 @@
 
     <div *ngFor= "let item of checkoutForm.controls.items['controls'];let i =index" [formGroupName]='i'>
 
-      <a [routerLink] (click)="removeItem(i)">remove</a>
+      <a [routerLink] (click)="removeItem(i)">Remove Item</a>
       <input class="form-control" type="text" formControlName="itemId" id="task{{i}}">
       <input class="form-control" type="text" formControlName="itemName" id="task{{i}}">
       <input class="form-control" type="text" formControlName="itemDesc" id="task{{i}}">

@@ -170,4 +170,9 @@ this.checkoutForm.statusChanges.subscribe(formState =>{
     this.items.push(newItem);
   }
 
+  removeItem(itemId){
+
+    this.items.removeAt(itemId);
+  }
+
 }
