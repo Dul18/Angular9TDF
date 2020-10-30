@@ -32,13 +32,14 @@ export class CheckoutComponent implements OnInit {
       quantity:['', Validators.required],
       terms: ['', Validators.requiredTrue],
 
-      items: this.formBuilder.array([
+
+      /*items: this.formBuilder.array([
 
          new FormControl('Angular'),
          new FormControl('React'),
-      ])
+      ])*/
 
-     /* items: this.formBuilder.array([
+     items: this.formBuilder.array([
 
         this.formBuilder.group({
 
@@ -49,7 +50,19 @@ export class CheckoutComponent implements OnInit {
 
         })
 
-      ])*/
+      ])
+        /*this.formBuilder.group({
+
+          taskId:['1'],
+          taskName:['ARC'],
+          itemDesc:['Tutorial'],
+          itemDone:['',Validators.requiredTrue]
+
+        })*/
+
+
+
+      
 
     });
 
@@ -58,6 +71,26 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //get the legth(size of the array)
+    //getting individual array items
+    //set array value for elements
+    //reset array
+   
+
+    this.checkoutForm.get('items').setValue([{
+
+          itemId:['1'],
+          itemName:['Learning'],
+          itemDesc:['Angular 9'],
+          itemDone:['',Validators.requiredTrue]
+    }]);
+
+    console.log(this.checkoutForm.get('items').value.length);
+    console.log(this.checkoutForm.get('items').value);
+   const itemVal = this.checkoutForm.get('items').value;
+    console.log(itemVal[0].itemDesc);
+
+    this.checkoutForm.get('items').reset();
 
    /* this.checkoutForm.get('emailAddr').valueChanges.subscribe(data =>{
 
