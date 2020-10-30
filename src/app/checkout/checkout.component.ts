@@ -25,9 +25,31 @@ export class CheckoutComponent implements OnInit {
     });*/
 
     this.checkoutForm= formBuilder.group({
-      emailAddr:['', [Validators.minLength(5),Validators.minLength(10), Validators.required, Validators.email]],
+      emailAddr:['', [Validators.minLength(5),
+                      Validators.minLength(10),
+                      Validators.required, 
+                      Validators.email]],
       quantity:['', Validators.required],
       terms: ['', Validators.requiredTrue],
+
+      items: this.formBuilder.array([
+
+         new FormControl('Angular'),
+         new FormControl('React'),
+      ])
+
+     /* items: this.formBuilder.array([
+
+        this.formBuilder.group({
+
+          itemId:['1'],
+          itemName:['ARC'],
+          itemDesc:['Tutorial'],
+          itemDone:['',Validators.requiredTrue]
+
+        })
+
+      ])*/
 
     });
 

@@ -18,17 +18,53 @@
       </div>
     </div>
     
-    <div class="form-group row">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName="terms">
-          <label class="form-check-label" for="gridCheck1">
-            Agree to terms
-          </label>
-        </div>
+   
+
+  <!--
+     <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Items</label>
+      <div class="col-sm-10" formArrayName="items">
+
+    <div *ngFor= "let item of checkoutForm.controls.items['controls'];let i =index" [formGroupName]='i'>
+
+      <a [routerLink] (click)="removeItem(i)">remove</a>
+      <input class="form-control" type="text" formControlName="itemId" id="task{{i}}">
+      <input class="form-control" type="text" formControlName="itemName" id="task{{i}}">
+      <input class="form-control" type="text" formControlName="itemDesc" id="task{{i}}">
+      <input class="checkbox" formControlName="itemDone"> 
+      Mark as Done
+    </div>
+    </div>
+
+    </div>
+  -->
+
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Items</label>
+    <div class="col-sm-10" formArrayName="items">
+
+  <div *ngFor= "let item of checkoutForm.controls.items['controls'];let i =index" >
+
+    
+    <input class="form-control" type="text" [formControlName]="i" id="task{{i}}">
+    
+  </div>
+  </div>
+
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName="terms">
+        <label class="form-check-label" for="gridCheck1">
+          Agree to terms
+        </label>
       </div>
     </div>
+  </div>
+
     <div class="form-group row">
       <div class="col-sm-10">
         <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">Check out</button>
@@ -38,6 +74,6 @@
   </form>
 </div>
 
-<div>
+<!--<div>
     Entered value is: {{valueChangedTracked}}
-</div>
+</div>-->
