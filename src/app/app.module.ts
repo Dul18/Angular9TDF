@@ -7,6 +7,8 @@ import { SigninComponent } from './signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,13 +16,15 @@ import { ObservableComponent } from './observable/observable.component';
     AppComponent,
     SigninComponent,
     CheckoutComponent,
-    ObservableComponent
+    ObservableComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Angular9",
+      "lastName": "tutorial"
+    },
+
+    {
+      "id": 2,
+      "author": "Shideer",
+      "title": "tutorial"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
