@@ -5,23 +5,25 @@
       "firstName": "Dulanka",
       "lastName": "San"
     },
-
     {
       "id": 1,
       "firstName": "Nirman",
       "lastName": "San"
     },
-
     {
       "id": 1,
       "firstName": "Ruwanthi",
       "lastName": "Pra"
     },
-
     {
       "id": 1,
       "firstName": "Lakshan",
       "lastName": "kodiya"
+    },
+    {
+      "id": 6,
+      "firstName": "Raj",
+      "lastName": "Kumar"
     }
   ],
   "comments": [

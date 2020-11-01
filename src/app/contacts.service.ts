@@ -30,4 +30,9 @@ export class ContactsService {
 
     
   }
+
+  createContact(createBody){
+
+    return this.httpClient.post('http://localhost:3000/contacts', createBody);
+  }
 }

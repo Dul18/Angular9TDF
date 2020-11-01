@@ -5,6 +5,12 @@
 
 <ul>
     <li *ngFor="let contact of contactList">
-        {{contact.contactName}}
+        {{contact.firstName}}
     </li>
 </ul>
+
+<h3>Create New Contact</h3>
+
+<div *ngIf="msgTrue">Contact created successfully</div>
+
+<button (click)="addNewContact()"> Add New Contact</button>

@@ -10,7 +10,7 @@ export class ContactsComponent implements OnInit {
 
   constructor(private contactsService: ContactsService) { }
 
-
+  msgTrue = false;
   contactList : any;
 
   ngOnInit(): void {
@@ -19,6 +19,19 @@ export class ContactsComponent implements OnInit {
 
       this.contactList = data;
      });
+
+     
   }
+
+  addNewContact(){
+
+    const newFormData={id:6, firstName: 'Raj', lastName:'Kumar'}
+
+    this.contactsService.createContact(newFormData).subscribe(data =>{
+      console.log(data);
+      this.msgTrue=true;
+    });
+
+   }
 
 }
