@@ -35,4 +35,11 @@ export class ContactsService {
 
     return this.httpClient.post('http://localhost:3000/contacts', createBody);
   }
+
+  updateContact(contactId,updatedBody){
+
+    const endpointURL = "http://localhost:3000/contacts" +contactId;
+    
+    return this.httpClient.put(endpointURL, updatedBody);
+  }
 }

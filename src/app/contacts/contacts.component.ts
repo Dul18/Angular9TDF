@@ -23,6 +23,8 @@ export class ContactsComponent implements OnInit {
      
   }
 
+  //POST method
+
   addNewContact(){
 
     const newFormData={id:6, firstName: 'Raj', lastName:'Kumar'}
@@ -32,6 +34,17 @@ export class ContactsComponent implements OnInit {
       this.msgTrue=true;
     });
 
+   }
+
+   //PUT method
+   updateContact(contactId){
+
+    const newFormData = {id:contactId, firstName: 'Mahi', lastName:'Kumar'};
+
+    this.contactsService.updateContact(contactId, newFormData).subscribe(data =>{
+      
+      this.msgTrue=true;
+    });
    }
 
 }
