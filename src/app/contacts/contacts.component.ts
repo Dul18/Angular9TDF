@@ -47,4 +47,18 @@ export class ContactsComponent implements OnInit {
     });
    }
 
+   //Delete Operation
+
+   deleteContact(contactId){
+
+    
+
+    this.contactsService.deleteContact(contactId).subscribe(data =>{
+      
+      console.log(data);
+    });
+      
+      
+   }
+
 }

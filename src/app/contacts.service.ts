@@ -42,4 +42,11 @@ export class ContactsService {
     
     return this.httpClient.put(endpointURL, updatedBody);
   }
+
+  deleteContact(contactId){
+
+    const endpointURL = "http://localhost:3000/contacts" +contactId;
+    
+    return this.httpClient.delete(endpointURL);
+  }
 }
