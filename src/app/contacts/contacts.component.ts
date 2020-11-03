@@ -61,4 +61,16 @@ export class ContactsComponent implements OnInit {
       
    }
 
+  getContact(){
+
+    
+
+    this.contactsService.getContactById().subscribe(data =>{
+
+      console.log(data);
+    });
+      
+      
+   }
+
 }

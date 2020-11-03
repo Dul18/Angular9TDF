@@ -46,15 +46,28 @@ export class ContactsService {
 
   updateContact(contactId,updatedBody){
 
-    const endpointURL = "http://localhost:3000/contacts" +contactId;
+    const endpointURL = "http://localhost:3000/contacts/" +contactId;
     
     return this.httpClient.put(endpointURL, updatedBody);
   }
 
   deleteContact(contactId){
 
-    const endpointURL = "http://localhost:3000/contacts" +contactId;
+    const endpointURL = "http://localhost:3000/contacts/?" +contactId;
     
     return this.httpClient.delete(endpointURL);
+  }
+
+  //HttpParams
+  getContactById(){
+    const httpParams = new HttpParams({
+      fromObject:{
+        id:['2','3'],
+        lastName : "kodiya"
+      }
+    });
+    //Querey Params
+    //http://localhost:3000/contacts?query=mark
+   return  this.httpClient.get("http://localhost:3000/contacts", {params:httpParams});
   }
 }
