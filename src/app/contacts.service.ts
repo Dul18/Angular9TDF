@@ -10,8 +10,8 @@ export class ContactsService {
 
   getContacts(){
 
-    //Headers
-    const httpHeaders = new HttpHeaders({
+    // Custom Headers
+    let httpHeaders = new HttpHeaders({
 
       'content-type': 'application/json',
       'Authorization': 'Authotutorial$#23'
@@ -20,6 +20,10 @@ export class ContactsService {
     //httpHeaders.append('content-type','application/json');
 
     //get the HTTP GET method working for you
+
+    //Custom Headers
+    httpHeaders = httpHeaders.set('Authtutorial','119');
+
     return this.httpClient.get('http://localhost:3000/contacts',{headers:httpHeaders});
 
     /*const contactList= [
