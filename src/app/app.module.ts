@@ -8,7 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {LoggingInterceptor} from './logging.interceptor';
 
 
 @NgModule({
@@ -27,7 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:LoggingInterceptor, multi: true}
+  ],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
