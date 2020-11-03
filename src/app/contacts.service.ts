@@ -11,12 +11,16 @@ export class ContactsService {
   getContacts(){
 
     //Headers
-    const httpHeaders = new HttpHeaders();
+    const httpHeaders = new HttpHeaders({
 
-    httpHeaders.append('content-type','application/json');
+      'content-type': 'application/json',
+      'Authorization': 'Authotutorial$#23'
+    });
+
+    //httpHeaders.append('content-type','application/json');
 
     //get the HTTP GET method working for you
-    return this.httpClient.get('http://localhost:3000/contacts');
+    return this.httpClient.get('http://localhost:3000/contacts',{headers:httpHeaders});
 
     /*const contactList= [
 
